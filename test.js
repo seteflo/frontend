@@ -16,5 +16,14 @@ console.log(usuario);
 //Solo se usará null como valor nulo
 //Funciones
 function promedio(a, b) {
-    return a + b;
+    return (a + b) / 2;
 }
+var promedioFuncion = function (a, b) {
+    if (b == undefined) {
+        return a / 2;
+    }
+    else {
+        return (a + b) / 2;
+    }
+};
+console.log(promedioFuncion(4));

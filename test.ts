@@ -29,5 +29,16 @@ console.log(usuario);
 //Funciones
 function promedio(a:number, b:number):number{
     
-    return a+b
+    return (a+b)/2
 }
+let promedioFuncion =function(a:number, b?:number):number{
+    if (b==undefined){
+        return a/2;
+    }
+    else{
+        return (a+b)/2
+    }
+    
+}
+
+console.log(promedioFuncion(4))
