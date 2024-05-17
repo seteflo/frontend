@@ -40,5 +40,54 @@ let promedioFuncion =function(a:number, b?:number):number{
     }
     
 }
-
 console.log(promedioFuncion(4))
+
+//interfaces
+
+//sin usar interfaces
+
+function mT(tarea:any){
+    console.log(tarea.descripcion + ", " + tarea.estado);
+}
+
+mT({descripcion: "Presentar Sillabus", status:"ealizado"})
+
+let TareaExplicita = {descripcion:"Presentar Sillabus", status:"ealizado"}
+mT(TareaExplicita)
+
+//usando interfaces
+
+interface ITarea{
+    descripcion: string,
+    estado:string
+}
+
+function mostrarITarea(tarea:ITarea){
+    console.log(tarea.descripcion+ " - " + tarea.estado);
+}
+
+//clases
+class Alumno{
+    codigo: number
+    nombreCompleto: string
+    ciclo:number
+
+    constructor(codigo:number, nombreCompleto: string, ciclo:number){
+        this.codigo=codigo
+        this.nombreCompleto=nombreCompleto
+        this.ciclo=ciclo
+    }
+
+    registrar():void{
+        console.log(this.nombreCompleto+" quedó registrado");
+        
+    }
+}
+
+let alumno:Alumno
+alumno= new Alumno(2001862, "Sebastian T", 5)
+console.log(alumno);
+alumno.registrar()
+
+
+

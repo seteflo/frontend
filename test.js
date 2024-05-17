@@ -27,3 +27,30 @@ var promedioFuncion = function (a, b) {
     }
 };
 console.log(promedioFuncion(4));
+//interfaces
+//sin usar interfaces
+function mT(tarea) {
+    console.log(tarea.descripcion + ", " + tarea.estado);
+}
+mT({ descripcion: "Presentar Sillabus", status: "ealizado" });
+var TareaExplicita = { descripcion: "Presentar Sillabus", status: "ealizado" };
+mT(TareaExplicita);
+function mostrarITarea(tarea) {
+    console.log(tarea.descripcion + " - " + tarea.estado);
+}
+//clases
+var Alumno = /** @class */ (function () {
+    function Alumno(codigo, nombreCompleto, ciclo) {
+        this.codigo = codigo;
+        this.nombreCompleto = nombreCompleto;
+        this.ciclo = ciclo;
+    }
+    Alumno.prototype.registrar = function () {
+        console.log(this.nombreCompleto + " quedó registrado");
+    };
+    return Alumno;
+}());
+var alumno;
+alumno = new Alumno(2001862, "Sebastian T", 5);
+console.log(alumno);
+alumno.registrar();
